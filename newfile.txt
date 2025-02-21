@@ -1,0 +1,11 @@
+Hello this file shows the example of use of linux in Visual studio Code and
+The quick brown fox jumps over the lazy dog.
+The quick brwon fox jumps over the lazy dog.
+
+These lines are added by the help of VIM editor in VS code for linux practice.
+
+Hello 
+Hello 
+
+the the the 
+the sun rises in the east and sets in west.
