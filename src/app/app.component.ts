@@ -1,30 +1,18 @@
-import { Component } from '@angular/core';
-import { HomeComponent } from './home/home.component';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ApiService } from './api.service';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [
-    // HomeComponent,
-    
-    RouterLink,
-    RouterOutlet,
-  ],
-  template: `
-    <main>
-      <a [routerLink]="['/']">
-        <header class="brand-name">
-          <img class="brand-logo" src="/assets/logo.svg" alt="logo" aria-hidden="true">
-        </header>
-      </a>
-      <section class="content">
-        <router-outlet></router-outlet>
-      </section>
-    </main>
-  `,
-  styleUrls: ['./app.component.css'],
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'homes';
+export class AppComponent implements OnInit {
+    title = 'frontEnd';
+    message: any;
+    constructor(private apiService: ApiService) { };
+    ngOnInit() {
+        this.apiService.getMessage().subscribe(data => {
+            this.message = data;
+        });
+    }
 }
